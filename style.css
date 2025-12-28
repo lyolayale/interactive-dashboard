@@ -83,8 +83,9 @@ header {
 .card-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 0.7rem;
+  gap: 5rem;
+  margin-top: 5rem;
+  padding: 1rem;
 }
 
 .card {
@@ -115,4 +116,15 @@ textarea {
   font-size: 1.1rem;
   height: 4rem;
   padding: 0.7rem;
+}
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
 }
