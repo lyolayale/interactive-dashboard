@@ -21,3 +21,27 @@ function updateGreeting() {
 }
 
 updateGreeting();
+
+// SIDEBAR
+const sideBar = document.getElementById("sidebar");
+const menuBtn = document.getElementById("menu-btn");
+const closeSidebar = document.getElementById("close-sidebar");
+
+menuBtn.addEventListener("click", () => {
+  sideBar.classList.add("open");
+});
+
+closeSidebar.addEventListener("click", () => {
+  sideBar.classList.remove("open");
+});
+
+// CLOSE SIDEBAR OUTSIDE
+document.addEventListener("click", e => {
+  if (
+    sideBar.classList.contains("open") &&
+    !sideBar.contains(e.target) &&
+    e.target !== menuBtn
+  ) {
+    sideBar.classList.remove("open");
+  }
+});
