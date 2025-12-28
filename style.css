@@ -16,3 +16,22 @@ body.dark {
   background-color: #1e1e1e;
   color: #fff;
 }
+
+/* ----- MOBILE DEFAULT STYLES ----- */
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 0.7rem;
+}
+
+.menu-btn,
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
