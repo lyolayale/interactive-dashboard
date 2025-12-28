@@ -98,6 +98,11 @@ header {
   text-decoration: none;
 }
 
+.sidebar a:hover {
+  text-decoration: underline;
+  text-decoration-color: #4a90e2;
+}
+
 /* CARDS */
 .card-container {
   display: grid;
