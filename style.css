@@ -78,3 +78,41 @@ header {
   font-size: 1.1rem;
   text-decoration: none;
 }
+
+/* CARDS */
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0.7rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+#quote-btn {
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px;
+  width: 10rem;
+}
+
+textarea {
+  font-size: 1.1rem;
+  height: 4rem;
+  padding: 0.7rem;
+}
