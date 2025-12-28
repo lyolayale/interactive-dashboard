@@ -5,3 +5,14 @@
   margin: 0;
   padding: 0;
 }
+
+/* THEME */
+body.light {
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #fff;
+}
