@@ -6,6 +6,12 @@
   padding: 0;
 }
 
+/* MISC. */
+h2::first-letter {
+  color: #4a90e2;
+  font-size: 2rem;
+}
+
 /* THEME */
 body.light {
   background-color: #f0f0f0;
