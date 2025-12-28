@@ -45,3 +45,8 @@ document.addEventListener("click", e => {
     sideBar.classList.remove("open");
   }
 });
+
+// FOOTER
+const year = document.getElementById("year");
+const getYear = new Date().getFullYear();
+year.textContent = getYear;
