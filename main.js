@@ -60,7 +60,10 @@ applyTheme(savedTheme);
 
 themeToggle.addEventListener("click", () => {
   const newTheme = document.body.classList.contains("dark") ? "light" : "dark";
-  header.classList.toggle("dark-header");
+
+  newTheme === "light"
+    ? (header.style.backgroundColor = "#4a90e2")
+    : (header.style.backgroundColor = "rgba(18, 18, 100, 0.8)");
 
   applyTheme(newTheme);
 });
@@ -77,6 +80,27 @@ themeToggle.addEventListener("mouseover", () => {
 
 header.addEventListener("mouseleave", () => {
   bubble.style.display = "none";
+});
+
+const bubbleMediaQuery = window.matchMedia("(min-width: 600px)");
+
+bubbleMediaQuery.addEventListener("change", e => {
+  if (e.matches) {
+    themeToggle.addEventListener("mouseover", () => {
+      bubble.style.display = "none";
+      clearInterval();
+    });
+  } else {
+    themeToggle.addEventListener("mouseover", () => {
+      bubble.style.display = "flex";
+
+      // clearInterval();
+    });
+
+    header.addEventListener("mouseleave", () => {
+      bubble.style.display = "none";
+    });
+  }
 });
 
 // QUOTES

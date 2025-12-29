@@ -36,10 +36,6 @@ header {
   padding: 0.7rem;
 }
 
-header.dark-header {
-  background-color: rgb(18, 18, 100, 0.8);
-}
-
 .header-info {
   display: flex;
   flex-direction: column;
@@ -113,6 +109,7 @@ header.dark-header {
   color: #fff;
   padding: 0.7rem;
   transition: left 0.3s ease;
+  z-index: 1;
 }
 
 .sidebar.open {
@@ -243,5 +240,27 @@ footer {
   footer {
     position: fixed;
     bottom: 0;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 900px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .menu-btn,
+  .theme-toggle {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
   }
 }
