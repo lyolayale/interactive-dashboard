@@ -216,3 +216,32 @@ footer {
   text-align: center;
   width: 100%;
 }
+
+/* MEDIA QUERIES */
+
+/* TABLET */
+@media screen and (min-width: 600px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    height: 15rem;
+  }
+
+  textarea {
+    height: 7rem;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
