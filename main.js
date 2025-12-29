@@ -46,6 +46,24 @@ document.addEventListener("click", e => {
   }
 });
 
+// THEME
+const themeToggle = document.getElementById("theme-toggle");
+
+function applyTheme(theme) {
+  document.body.className = theme;
+  localStorage.setItem("theme", theme);
+  themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+}
+
+const savedTheme = localStorage.getItem("theme") || "light";
+applyTheme(savedTheme);
+
+themeToggle.addEventListener("click", () => {
+  const newTheme = document.body.classList.contains("dark") ? "light" : "dark";
+
+  applyTheme(newTheme);
+});
+
 // FOOTER
 const year = document.getElementById("year");
 const getYear = new Date().getFullYear();
