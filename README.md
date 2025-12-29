@@ -53,8 +53,8 @@ These will be added **in the exact order** below:
 
 ## 📂 Folder Structure
 
-interactive-dashboard/
-|
+interactive-dashboard/  
+|  
 |----- index.html  
 |----- main.js  
 |----- style.css  
