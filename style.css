@@ -51,7 +51,58 @@ header {
   color: #fff;
   cursor: pointer;
   font-size: 2rem;
+  transition: display 0.3s ease-in-out;
 }
+
+/* BUBBLE */
+
+#bubble-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: -1.5rem;
+}
+
+#theme-toggle__text {
+  position: relative;
+  top: 0;
+  left: 1.5rem;
+  color: lightpink;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.bubble {
+  color: aqua;
+  font-size: 5px;
+}
+
+#bubble-1 {
+  position: relative;
+  top: 0;
+  left: 1.5rem;
+  font-size: 10px;
+}
+
+#bubble-2 {
+  position: relative;
+  top: 0;
+  left: 1rem;
+  font-size: 7px;
+}
+
+#bubble-3 {
+  position: relative;
+  top: 0;
+  left: 0.6rem;
+}
+
+/* #bubble-container:has(~ #theme-toggle:hover) {
+  display: flex;
+  cursor: pointer;
+} */
 
 /* SIDEBAR */
 .sidebar {

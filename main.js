@@ -46,7 +46,7 @@ document.addEventListener("click", e => {
   }
 });
 
-// THEME
+// THEM
 const themeToggle = document.getElementById("theme-toggle");
 
 function applyTheme(theme) {
@@ -62,6 +62,20 @@ themeToggle.addEventListener("click", () => {
   const newTheme = document.body.classList.contains("dark") ? "light" : "dark";
 
   applyTheme(newTheme);
+});
+
+// BUBBLE
+const bubble = document.getElementById("bubble-container");
+const header = document.querySelector("header");
+
+themeToggle.addEventListener("mouseover", () => {
+  bubble.style.display = "flex";
+
+  clearInterval();
+});
+
+header.addEventListener("mouseleave", () => {
+  bubble.style.display = "none";
 });
 
 // FOOTER
