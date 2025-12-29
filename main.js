@@ -60,6 +60,7 @@ applyTheme(savedTheme);
 
 themeToggle.addEventListener("click", () => {
   const newTheme = document.body.classList.contains("dark") ? "light" : "dark";
+  header.classList.toggle("dark-header");
 
   applyTheme(newTheme);
 });

@@ -36,6 +36,10 @@ header {
   padding: 0.7rem;
 }
 
+header.dark-header {
+  background-color: rgb(18, 18, 100, 0.8);
+}
+
 .header-info {
   display: flex;
   flex-direction: column;
@@ -51,7 +55,6 @@ header {
   color: #fff;
   cursor: pointer;
   font-size: 2rem;
-  transition: display 0.3s ease-in-out;
 }
 
 /* BUBBLE */
@@ -98,11 +101,6 @@ header {
   top: 0;
   left: 0.6rem;
 }
-
-/* #bubble-container:has(~ #theme-toggle:hover) {
-  display: flex;
-  cursor: pointer;
-} */
 
 /* SIDEBAR */
 .sidebar {
