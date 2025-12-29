@@ -78,6 +78,22 @@ header.addEventListener("mouseleave", () => {
   bubble.style.display = "none";
 });
 
+// QUOTES
+const quotes = [
+  "Discipline beats motivation.",
+  "Small steps create big results.",
+  "The best time to start was yesterday.",
+  "Focus is your superpower.",
+  "You don’t need permission to build something great.",
+  "Every expert was once a beginner.",
+  "The more you build, the better you get.",
+];
+
+document.getElementById("quote-btn").addEventListener("click", () => {
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("quote-text").textContent = randomQuote;
+});
+
 // FOOTER
 const year = document.getElementById("year");
 const getYear = new Date().getFullYear();
