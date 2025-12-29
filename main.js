@@ -46,7 +46,7 @@ document.addEventListener("click", e => {
   }
 });
 
-// THEM
+// THEME
 const themeToggle = document.getElementById("theme-toggle");
 
 function applyTheme(theme) {
