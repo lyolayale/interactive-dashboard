@@ -51,9 +51,11 @@ These will be added **in the exact order** below:
 
 ---
 
+## 📂 Folder Structure
+
 interactive-dashboard/
 |
-|----- index.html
-|----- main.js
-|----- style.css
+|----- index.html  
+|----- main.js  
+|----- style.css  
 |_____ README.md
