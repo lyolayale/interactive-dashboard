@@ -48,6 +48,7 @@ document.addEventListener("click", e => {
 
 // THEME
 const themeToggle = document.getElementById("theme-toggle");
+const cards = document.querySelectorAll(".card");
 
 function applyTheme(theme) {
   document.body.className = theme;
@@ -60,10 +61,22 @@ applyTheme(savedTheme);
 
 themeToggle.addEventListener("click", () => {
   const newTheme = document.body.classList.contains("dark") ? "light" : "dark";
+  if (newTheme === "light") {
+    header.style.backgroundColor = "#4a90e2";
+  } else {
+    header.style.backgroundColor = "rgba(18, 18, 100, 0.8)";
+  }
 
-  newTheme === "light"
-    ? (header.style.backgroundColor = "#4a90e2")
-    : (header.style.backgroundColor = "rgba(18, 18, 100, 0.8)");
+  cards.forEach(card => {
+    const newTheme = document.body.classList.contains("dark")
+      ? "light"
+      : "dark";
+    if (newTheme === "light") {
+      card.style.boxShadow = "5px 5px 10px rgba(0, 0, 0, 0.5)";
+    } else {
+      card.style.boxShadow = "5px 5px 10px rgba(226, 226, 226, 0.5)";
+    }
+  });
 
   applyTheme(newTheme);
 });
