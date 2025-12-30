@@ -139,7 +139,7 @@ document.addEventListener("touchstart", e => {
   } else {
     isEdgeSwipe = false;
   }
-  console.log(isEdgeSwipe);
+  // console.log(isEdgeSwipe);
 });
 
 // DETECT TOUCH MOVE (USER DRAG FINGER)
@@ -154,5 +154,21 @@ document.addEventListener("touchmove", e => {
   if (swipeDistance > 40) {
     sideBar.classList.add("open");
     isEdgeSwipe = false;
+  }
+});
+
+// SWIPE LEFT TO CLOSE SIDEBAR
+let sidebarTouchStartX = 0;
+
+sideBar.addEventListener("touchstart", e => {
+  sidebarTouchStartX = e.touches[0].clientX;
+});
+
+sideBar.addEventListener("touchmove", e => {
+  const difference = e.touches[0].clientX - sidebarTouchStartX;
+
+  // If sliding finger left more than 40px -> close sidebar
+  if (difference < -40) {
+    sideBar.classList.remove("open");
   }
 });
