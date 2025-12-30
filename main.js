@@ -121,3 +121,38 @@ document.getElementById("quote-btn").addEventListener("click", () => {
 const year = document.getElementById("year");
 const getYear = new Date().getFullYear();
 year.textContent = getYear;
+
+/* -------------------------------
+   EDGE SWIPE TO OPEN SIDEBAR
+----------------------------------*/
+let touchStartX = 0;
+let touchCurrentX = 0;
+let isEdgeSwipe = false;
+
+// DETECT TOUCH START
+document.addEventListener("touchstart", e => {
+  touchStartX = e.touches[0].clientX;
+
+  // Only allows swipe if touch starts from the left 0-30px
+  if (touchStartX < 30 && !sideBar.classList.contains("open")) {
+    isEdgeSwipe = true;
+  } else {
+    isEdgeSwipe = false;
+  }
+  console.log(isEdgeSwipe);
+});
+
+// DETECT TOUCH MOVE (USER DRAG FINGER)
+document.addEventListener("touchmove", e => {
+  if (!isEdgeSwipe) return;
+
+  touchCurrentX = e.touches[0].clientX;
+
+  const swipeDistance = touchCurrentX - touchStartX;
+
+  // If user swipes right more than 40px -> open sidebar
+  if (swipeDistance > 40) {
+    sideBar.classList.add("open");
+    isEdgeSwipe = false;
+  }
+});
