@@ -67,33 +67,41 @@ themeToggle.addEventListener("click", () => {
     header.style.backgroundColor = "rgba(18, 18, 100, 0.8)";
   }
 
-  cards.forEach(card => {
-    const newTheme = document.body.classList.contains("dark")
-      ? "light"
-      : "dark";
-    if (newTheme === "light") {
-      card.style.boxShadow = "5px 5px 10px rgba(0, 0, 0, 0.5)";
-    } else {
-      card.style.boxShadow = "5px 5px 10px rgba(226, 226, 226, 0.5)";
-    }
-  });
+  // cards.forEach(card => {
+  //   const newTheme = document.body.classList.contains("dark")
+  //     ? "light"
+  //     : "dark";
+  //   if (newTheme === "light") {
+  //     card.style.boxShadow = "5px 5px 10px rgba(0, 0, 0, 0.5)";
+  //   } else {
+  //     card.style.boxShadow = "5px 5px 10px rgba(226, 226, 226, 0.5)";
+  //   }
+  // });
 
   applyTheme(newTheme);
+});
+
+cards.forEach(card => {
+  if (document.body.classList.contains("light")) {
+    card.style.boxShadow = "5px 5px 10px rgba(0, 0, 0, 0.5)";
+  } else {
+    card.style.boxShadow = "5px 5px 10px rgba(226, 226, 226, 0.5)";
+  }
 });
 
 // BUBBLE
 const bubble = document.getElementById("bubble-container");
 const header = document.querySelector("header");
 
-themeToggle.addEventListener("mouseover", () => {
-  bubble.style.display = "flex";
+// themeToggle.addEventListener("mouseover", () => {
+//   bubble.style.display = "flex";
 
-  clearInterval();
-});
+//   clearInterval();
+// });
 
-header.addEventListener("mouseleave", () => {
-  bubble.style.display = "none";
-});
+// header.addEventListener("mouseleave", () => {
+//   bubble.style.display = "none";
+// });
 
 const bubbleMediaQuery = window.matchMedia("(min-width: 600px)");
 
@@ -106,8 +114,6 @@ bubbleMediaQuery.addEventListener("change", e => {
   } else {
     themeToggle.addEventListener("mouseover", () => {
       bubble.style.display = "flex";
-
-      // clearInterval();
     });
 
     header.addEventListener("mouseleave", () => {
