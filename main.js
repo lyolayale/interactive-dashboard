@@ -28,15 +28,20 @@ const animateCards = document.querySelectorAll(".scroll-animate");
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+      const index = [...animateCards].indexOf(entry.target);
+      // Adds increment delay per card index
+      entry.target.style.setProperty("--delay", `${index * 0.1}s`);
 
-        // Stop observing once card revealed
-        // observer.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        // Adds the reveal class
+        entry.target.classList.add("show");
+      } else {
+        // Removes reveal class
+        entry.target.classList.remove("show");
       }
     });
   },
-  { threshold: 1 }
+  { threshold: 0.5 }
 );
 
 animateCards.forEach(card => {
