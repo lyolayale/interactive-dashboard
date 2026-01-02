@@ -22,6 +22,27 @@ function updateGreeting() {
 
 updateGreeting();
 
+// CARD SCROLL ANIMATION
+const animateCards = document.querySelectorAll(".scroll-animate");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+
+        // Stop observing once card revealed
+        // observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 1 }
+);
+
+animateCards.forEach(card => {
+  observer.observe(card);
+});
+
 // SIDEBAR
 const sideBar = document.getElementById("sidebar");
 const menuBtn = document.getElementById("menu-btn");
