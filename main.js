@@ -96,14 +96,6 @@ themeToggle.addEventListener("click", () => {
   applyTheme(newTheme);
 });
 
-cards.forEach(card => {
-  if (document.body.classList.contains("light")) {
-    card.style.boxShadow = "5px 5px 10px rgba(0, 0, 0, 0.5)";
-  } else {
-    card.style.boxShadow = "5px 5px 10px rgba(226, 226, 226, 0.5)";
-  }
-});
-
 // BUBBLE
 const bubble = document.getElementById("bubble-container");
 const header = document.querySelector("header");
