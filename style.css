@@ -305,4 +305,12 @@ footer {
   .card {
     padding: 1.5rem;
   }
+
+  .bottom-nav {
+    display: none;
+  }
+
+  footer {
+    margin-bottom: 1rem;
+  }
 }
