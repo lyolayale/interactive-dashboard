@@ -172,3 +172,25 @@ sideBar.addEventListener("touchmove", e => {
     sideBar.classList.remove("open");
   }
 });
+
+/*--------------------------
+  BOTTOM NAV TAB SWITCHING
+----------------------------*/
+const tabButtons = document.querySelectorAll(".tab-btn");
+
+tabButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Remove active from all
+    tabButtons.forEach(b => b.classList.remove("active"));
+
+    // Highlight the click tab button
+    btn.classList.add("active");
+
+    // Get the tab name(home, dashboard, tasks, profile)
+    const tab = btn.dataset.tab;
+
+    console.log(`Switched to tab: ${tab}`);
+
+    // Later: show/hide content based on tab
+  });
+});
