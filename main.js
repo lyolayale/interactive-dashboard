@@ -195,6 +195,7 @@ sideBar.addEventListener("touchmove", e => {
   BOTTOM NAV TAB SWITCHING
 ----------------------------*/
 const tabButtons = document.querySelectorAll(".tab-btn");
+const tabScreens = document.querySelectorAll(".tab-screen");
 
 tabButtons.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -210,5 +211,12 @@ tabButtons.forEach(btn => {
     console.log(`Switched to tab: ${tab}`);
 
     // Later: show/hide content based on tab
+
+    // Hide all screens
+    tabScreens.forEach(screen => screen.classList.remove("active-screen"));
+
+    // Show selected screen
+    const targetScreen = document.getElementById(tab);
+    targetScreen.classList.add("active-screen");
   });
 });
