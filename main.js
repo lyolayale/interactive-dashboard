@@ -218,5 +218,12 @@ tabButtons.forEach(btn => {
     // Show selected screen
     const targetScreen = document.getElementById(tab);
     targetScreen.classList.add("active-screen");
+
+    // Footer placement
+    if (tab !== "home") {
+      const footer = document.querySelector("footer");
+      footer.style.position = "fixed";
+      footer.style.bottom = 0;
+    }
   });
 });
