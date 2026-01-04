@@ -193,6 +193,13 @@ header {
   box-shadow: 1px 1px 5px #5f5e5e;
 }
 
+/* Weather Widget */
+/* Weather input */
+#weather {
+  padding: 0.5rem;
+  width: 50%;
+  border: 1px solid #4a90e2;
+}
 .weather-card {
   display: flex;
   flex-direction: column;
@@ -361,6 +368,10 @@ footer {
 
   .card {
     height: 15rem;
+  }
+
+  #weather {
+    width: 100%;
   }
 
   textarea {

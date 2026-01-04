@@ -201,7 +201,6 @@ const weatherTemp = document.querySelector(".weather-temp");
 const weatherDesc = document.querySelector(".weather-desc");
 const weatherExtra = document.querySelector(".weather-extra");
 const weatherInput = document.getElementById("weather");
-const weatherBtn = document.querySelector(".weather-btn");
 
 // Default city
 const DEFAULT_CITY = "Atlanta";
@@ -209,12 +208,6 @@ const DEFAULT_CITY = "Atlanta";
 // Fetch weather from wttr.in (no API key needed!)
 async function fetchWeather(city) {
   try {
-    // if (weatherInput.value !== "") {
-    //   city = weatherInput.value;
-    // } else {
-    //   city = DEFAULT_CITY;
-    // }
-
     city = weatherInput.value || DEFAULT_CITY;
 
     const res = await fetch(`https://wttr.in/${city}?format=j1`);
@@ -234,12 +227,15 @@ async function fetchWeather(city) {
   }
 }
 
-weatherBtn.addEventListener("click", () => {
-  fetchWeather();
+weatherInput.addEventListener("keydown", e => {
+  console.log(e.key);
+  if (e.key === "Enter") {
+    fetchWeather();
 
-  setTimeout(() => {
-    weatherInput.value = "";
-  }, 500);
+    setTimeout(() => {
+      weatherInput.value = "";
+    }, 500);
+  }
 });
 
 // Try geolocation first
