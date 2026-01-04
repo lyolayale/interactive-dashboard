@@ -200,6 +200,8 @@ const weatherLocation = document.querySelector(".weather-location");
 const weatherTemp = document.querySelector(".weather-temp");
 const weatherDesc = document.querySelector(".weather-desc");
 const weatherExtra = document.querySelector(".weather-extra");
+const weatherInput = document.getElementById("weather");
+const weatherBtn = document.querySelector(".weather-btn");
 
 // Default city
 const DEFAULT_CITY = "Atlanta";
@@ -223,6 +225,14 @@ async function fetchWeather(city) {
     weatherStatus.textContent = "Unable to load weather.";
   }
 }
+
+// weatherBtn.addEventListener("click", () => {
+//   fetchWeather();
+
+//   setTimeout(() => {
+//     weatherInput.value = "";
+//   }, 2000);
+// });
 
 // Try geolocation first
 function loadWeather() {
