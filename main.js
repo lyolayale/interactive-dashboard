@@ -191,6 +191,61 @@ sideBar.addEventListener("touchmove", e => {
   }
 });
 
+/*---------------
+  WEATHER WIDGET
+----------------*/
+const weatherStatus = document.querySelector(".weather-status");
+const weatherInfo = document.querySelector(".weather-info");
+const weatherLocation = document.querySelector(".weather-location");
+const weatherTemp = document.querySelector(".weather-temp");
+const weatherDesc = document.querySelector(".weather-desc");
+const weatherExtra = document.querySelector(".weather-extra");
+
+// Default city
+const DEFAULT_CITY = "Atlanta";
+
+// Fetch weather from wttr.in (no API key needed!)
+async function fetchWeather(city) {
+  try {
+    const res = await fetch(`https://wttr.in/${city}?format=j1`);
+    const data = await res.json();
+
+    const current = data.current_condition[0];
+
+    weatherLocation.textContent = city;
+    weatherTemp.textContent = `${current.temp_F}°F`;
+    weatherDesc.textContent = current.weatherDesc[0].value;
+    weatherExtra.textContent = `Feels like: ${current.FeelsLikeF}°F`;
+
+    weatherStatus.style.display = "none";
+    weatherInfo.classList.remove("hidden");
+  } catch (err) {
+    weatherStatus.textContent = "Unable to load weather.";
+  }
+}
+
+// Try geolocation first
+function loadWeather() {
+  if (!navigator.geolocation) {
+    fetchWeather(DEFAULT_CITY);
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const lat = pos.coords.latitude;
+      const long = pos.coords.longitude;
+
+      fetchWeather(`${lat},${long}`);
+    },
+    () => {
+      // If permission denied
+      fetchWeather(DEFAULT_CITY);
+    }
+  );
+}
+
+loadWeather();
 /*--------------------------
   BOTTOM NAV TAB SWITCHING
 ----------------------------*/
