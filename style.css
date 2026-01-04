@@ -226,6 +226,25 @@ textarea {
   border-color: #4a90e2;
 }
 
+/* TAB SCREEN BEHAVIOR */
+.tab-screen {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px); /* slide up effect */
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Show active tab */
+.tab-screen.active-screen {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-screen h2 {
+  margin-top: 1rem;
+}
+
 /* BOTTOM NAV */
 .bottom-nav {
   position: fixed;
@@ -264,8 +283,11 @@ textarea {
 }
 
 .tab-btn.active {
+  border: 1px solid #4a90e2;
   color: #4a90e2;
   font-weight: bold;
+  transform: translateY(-4px);
+  transition: transform 0.25s ease;
 }
 
 .tab-btn:active {
