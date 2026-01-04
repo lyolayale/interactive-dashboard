@@ -220,10 +220,12 @@ tabButtons.forEach(btn => {
     targetScreen.classList.add("active-screen");
 
     // Footer placement
+    const footer = document.querySelector("footer");
     if (tab !== "home") {
-      const footer = document.querySelector("footer");
       footer.style.position = "fixed";
       footer.style.bottom = 0;
+    } else {
+      footer.style.position = "static";
     }
   });
 });
