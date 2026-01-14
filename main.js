@@ -194,6 +194,34 @@ sideBar.addEventListener("touchmove", e => {
 /*---------------
   WEATHER WIDGET
 ----------------*/
+
+// Weather icon logic
+const weatherIcon = document.getElementById("weather-icon");
+
+function setWeatherIcon(description) {
+  const text = description.toLowerCase();
+
+  if (text.includes("sun") || text.includes("clear")) {
+    weatherIcon.textContent = "☀️";
+  } else if (text.includes("cloud")) {
+    weatherIcon.textContent = "☁️";
+  } else if (text.includes("rain") || text.includes("drizzle")) {
+    weatherIcon.textContent = "🌧️";
+  } else if (text.includes("storm") || text.includes("thunder")) {
+    weatherIcon.textContent = "⛈️";
+  } else if (text.includes("snow")) {
+    weatherIcon.textContent = "❄️";
+  } else if (
+    text.includes("fog") ||
+    text.includes("mist") ||
+    text.includes("overcast")
+  ) {
+    weatherIcon.textContent = "😶‍🌫️";
+  } else {
+    weatherIcon.textContent = "🌡️";
+  }
+}
+
 const weatherStatus = document.querySelector(".weather-status");
 const weatherInfo = document.querySelector(".weather-info");
 const weatherLocation = document.querySelector(".weather-location");
@@ -218,6 +246,8 @@ async function fetchWeather(city) {
     weatherLocation.textContent = city;
     weatherTemp.textContent = `${current.temp_F}°F`;
     weatherDesc.textContent = current.weatherDesc[0].value;
+    // Set weather icon
+    setWeatherIcon(current.weatherDesc[0].value);
     weatherExtra.textContent = `Feels like: ${current.FeelsLikeF}°F`;
 
     weatherStatus.style.display = "none";
