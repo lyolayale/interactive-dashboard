@@ -181,7 +181,7 @@ header {
   align-items: left;
   gap: 2rem;
   width: 100%;
-  height: 15rem;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   box-shadow: 3px 3px 10px rgb(211, 211, 211, 0.7);
@@ -208,6 +208,13 @@ header {
 
 .weather-info.hidden {
   display: none;
+}
+
+/* Weather icon */
+.weather-icon {
+  font-size: 3rem;
+  margin: 0.25rem 0;
+  animation: float 3s ease-in-out infinite;
 }
 
 .weather-location {
@@ -411,5 +418,20 @@ footer {
 
   footer {
     margin-bottom: 1rem;
+  }
+}
+
+/* KEYFRAMES */
+
+/* Weather icon float animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
